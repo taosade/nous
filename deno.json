@@ -1,0 +1,8 @@
+{
+	"tasks": {
+		"run": "deno run --allow-all --watch main.ts"
+	},
+	"imports": {
+		"@std/dotenv": "jsr:@std/dotenv@^0.225.2"
+	}
+}
