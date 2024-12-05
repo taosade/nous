@@ -1,4 +1,4 @@
-import { Component, Context, Props } from 'nous/types'
+import { Component, Context, Props } from 'nous'
 
 const RootLayout: Component = (ctx: Context, props?: Props) => `
 	<!DOCTYPE html>

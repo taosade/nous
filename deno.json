@@ -3,9 +3,8 @@
 		"run": "deno run --allow-all --watch src/main.ts"
 	},
 	"imports": {
-		"nous/components": "./src/components.ts",
-		"nous/core": "./src/core.ts",
-		"nous/types": "./src/types.ts",
+		"nous": "./src/nous.ts",
+		"nous/routes": "./src/routes.ts",
 		"nous/utils": "./src/utils.ts",
 		"@std/dotenv": "jsr:@std/dotenv@^0.225.2"
 	},

@@ -1,7 +1,15 @@
-import '@std/dotenv/load'
-import { Context, isMethod } from 'nous/types'
-import { render } from 'nous/core'
-import routes from './routes.ts'
+//import '@std/dotenv/load'
+import { Context, isMethod, render } from 'nous'
+import routes from 'nous/routes'
+
+const errorHandler = (error: unknown): Response => {
+	console.error('Uncough error in request handler', error)
+
+	return new Response('Internal Server Error', {
+		status: 500,
+		headers: new Headers({ 'content-type': 'text/plain' })
+	})
+}
 
 const requestHandler = async (req: Request): Promise<Response> => {
 	const url = new URL(req.url)
@@ -43,15 +51,6 @@ const requestHandler = async (req: Request): Promise<Response> => {
 		headers: new Headers({
 			'content-type': ctx.res.contentType
 		})
-	})
-}
-
-const errorHandler = (error: unknown): Response => {
-	console.error('Error thrown in request handler', error)
-
-	return new Response('Internal Server Error', {
-		status: 500,
-		headers: new Headers({ 'content-type': 'text/plain' })
 	})
 }
 

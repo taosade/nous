@@ -1,4 +1,4 @@
-import { Component, Context, Props } from 'nous/types'
+import { Component, Context, Props } from 'nous'
 
 const Button: Component = (_ctx: Context, props: Props) => {
 	if (typeof props.label !== 'string' || !props.label.trim()) {
